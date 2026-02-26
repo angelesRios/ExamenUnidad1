@@ -18,7 +18,7 @@
         <div class="row g-3 align-items-end mb-4">
             <div class="col-12 col-md-4">
                 <label for="q" class="form-label fw-semibold">Término de búsqueda</label>
-                <input type="text" class="form-control" id="q" placeholder="tecnología, deportes...">
+                <input type="text" class="form-control" id="q" placeholder="Ej. tecnología, deportes...">
             </div>
             <div class="col-6 col-md-3">
                 <label for="from" class="form-label fw-semibold">Desde</label>
@@ -34,7 +34,47 @@
         </div>
 
         <!-- Contenedor de resultados -->
-        <div class="row row-cols-1 row-cols-md-2 g-4" id="resultados"></div>
+        <div class="row row-cols-1 row-cols-md-2 g-4" id="resultados">
+
+            <!-- TARJETA PROVISIONAL (se generará dinámicamente con JS) -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://placehold.co/600x200?text=Imagen+Noticia"
+                        class="card-img-top" alt="Imagen de la noticia">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Título de la noticia provisional</h5>
+                        <p class="card-text flex-grow-1">
+                            Descripción breve de la noticia. Aquí irá el campo <code>description</code> que retorna la API.
+                        </p>
+                        <ul class="list-unstyled text-muted small mb-3">
+                            <li><strong>Fuente:</strong> Nombre del Medio (source.name)</li>
+                            <li><strong>Publicado:</strong> 26/02/2026</li>
+                        </ul>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-auto">Leer noticia completa</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA PROVISIONAL SIN IMAGEN (cuando urlToImage es null) -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Noticia sin imagen disponible</h5>
+                        <p class="card-text flex-grow-1">
+                            Cuando la API no retorne imagen (<code>urlToImage: null</code>), la tarjeta se muestra sin la imagen superior.
+                        </p>
+                        <ul class="list-unstyled text-muted small mb-3">
+                            <li><strong>Fuente:</strong> Otro Medio (source.name)</li>
+                            <li><strong>Publicado:</strong> 25/02/2026</li>
+                        </ul>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-auto">Leer noticia completa</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <script src="./script.js"></script>
